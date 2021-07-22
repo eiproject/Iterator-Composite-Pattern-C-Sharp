@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using IteratorCompositePattern.Models;
 
 namespace IteratorCompositePattern.Business {
-  class IteratorDepeartemtOfEngineering : IIterator {
+  class IteratorDepartmentOfEngineering : IIterator {
     private Student[] _members;
     private int _position = 0;
-    internal IteratorDepeartemtOfEngineering(Student[] members) {
+    internal IteratorDepartmentOfEngineering(Student[] members) {
       _members = members;
     }
 

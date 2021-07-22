@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using IteratorCompositePattern.Business;
 
 namespace IteratorCompositePattern.Models {
-  class DepeartemtOfEngineering {
+  class DepartmentOfEngineering {
     int _maxMembers = 5;
     int _numberOfItems = 0;
     Student[] _members;
-    internal DepeartemtOfEngineering() {
+    internal DepartmentOfEngineering() {
       _members = new Student[_maxMembers];
       AddMember("Gon", 23, 170, 71);
       AddMember("Joo", 22, 175, 75);
@@ -32,7 +32,7 @@ namespace IteratorCompositePattern.Models {
           return _members;
         }*/
     internal IIterator GetIterator() {
-      return new IteratorDepartmentOfEngineering(_members);
+      return new IteratorDepartmentOfEngineering (_members);
     }
   }
 }

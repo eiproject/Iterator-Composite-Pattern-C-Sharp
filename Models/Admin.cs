@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace IteratorCompositePattern.Models {
   class Admin {
     internal Admin() {
-
+      DepartmentOfArt memberOfArt = new DepartmentOfArt();
+      DepartmentOfEngineering memberOfArt = new DepartmentOfArt();
     }
     void PrintMembers() {
 
