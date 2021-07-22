@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IteratorCompositePattern.Business;
 
 namespace IteratorCompositePattern.Models {
-  class DepartmentOfArts {
+  class DepartmentOfArt {
     List<Student> _members;
-    internal DepartmentOfArts() {
+    internal DepartmentOfArt() {
       _members = new List<Student>();
       AddMember("Yan", 21, 155, 45);
       AddMember("Sin", 20, 153, 47);
@@ -17,8 +18,12 @@ namespace IteratorCompositePattern.Models {
       Student newStudent = new Student(name, age, height, weight);
       _members.Add(newStudent);
     }
-    internal List<Student> GetMembers() {
-      return _members;
+    // Commented, exsposed internal implementation
+    /*    internal List<Student> GetMembers() {
+          return _members;
+        }*/
+    internal IIterator GetIterator() {
+      return new IteratorDepartmentOfArt(_members);
     }
   }
 }

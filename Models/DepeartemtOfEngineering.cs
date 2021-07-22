@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IteratorCompositePattern.Business;
 
 namespace IteratorCompositePattern.Models {
   class DepeartemtOfEngineering {
@@ -26,8 +27,12 @@ namespace IteratorCompositePattern.Models {
         Console.WriteLine("Members limit reached.");
       }
     }
-    internal Student[] GetMembers() {
-      return _members;
+    // Commented, exsposed internal implementation
+    /*    internal Student[] GetMembers() {
+          return _members;
+        }*/
+    internal IIterator GetIterator() {
+      return new IteratorDepartmentOfEngineering(_members);
     }
   }
 }

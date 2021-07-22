@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\DepartmentOfArts.cs" />
+    <Compile Include="Business\IIterator.cs" />
+    <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\DepartmentOfArt.cs" />
     <Compile Include="Models\DepeartemtOfEngineering.cs" />
+    <Compile Include="Business\IteratorDepartmentOfArt.cs" />
+    <Compile Include="Business\IteratorDepeartemtOfEngineering.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
