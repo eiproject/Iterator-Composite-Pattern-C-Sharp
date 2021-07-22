@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IteratorCompositePattern {
+namespace IteratorPattern {
   class Program {
     static void Main(string[] args) {
     }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IteratorCompositePattern.Business;
+using IteratorPattern.Business;
 
-namespace IteratorCompositePattern.Models {
+namespace IteratorPattern.Models {
   class DepartmentOfEngineering {
     int _maxMembers = 5;
     int _numberOfItems = 0;

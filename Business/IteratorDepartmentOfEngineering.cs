@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IteratorCompositePattern.Models;
+using IteratorPattern.Models;
 
-namespace IteratorCompositePattern.Business {
+namespace IteratorPattern.Business {
   class IteratorDepartmentOfEngineering : IIterator {
     private Student[] _members;
     private int _position = 0;

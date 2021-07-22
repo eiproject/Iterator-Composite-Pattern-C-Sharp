@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IteratorCompositePattern.Business {
+namespace IteratorPattern.Business {
   interface IIterator {
     bool HasNext();
     object Next();
