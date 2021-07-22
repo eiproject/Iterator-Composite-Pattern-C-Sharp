@@ -26,5 +26,8 @@ namespace IteratorCompositePattern.Models {
         Console.WriteLine("Members limit reached.");
       }
     }
+    internal Student[] GetMembers() {
+      return _members;
+    }
   }
 }

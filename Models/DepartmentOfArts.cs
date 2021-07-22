@@ -17,5 +17,8 @@ namespace IteratorCompositePattern.Models {
       Student newStudent = new Student(name, age, height, weight);
       _members.Add(newStudent);
     }
+    internal List<Student> GetMembers() {
+      return _members;
+    }
   }
 }
