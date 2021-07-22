@@ -13,7 +13,7 @@ namespace IteratorPattern.Business {
       _members = members;
     }
     bool IIterator.HasNext() {
-      if (_members.Count < _position) {
+      if (_members.Count > _position) {
         return true;
       }
       else {
