@@ -7,22 +7,29 @@ using IteratorPattern.Business;
 
 namespace IteratorPattern.Models {
   class Admin {
-    private DepartmentOfArt _memberOfArt;
-    private DepartmentOfEngineering _memberOfEng;
+    private IDepartment _memberOfArt;
+    private IDepartment _memberOfEng;
+    private IDepartment _memberOfEdu;
 
     internal Admin() {
       _memberOfArt = new DepartmentOfArt();
       _memberOfEng = new DepartmentOfEngineering();
+      _memberOfEdu = new DepartmentOfEducation();
     }
     internal void PrintMembers() {
-      IIterator iteratorOfArt = _memberOfArt.GetIterator();
-      IIterator iteratorOfEng = _memberOfEng.GetIterator();
+      IIterator iteratorOfArt = _memberOfArt.CreateIterator();
+      IIterator iteratorOfEng = _memberOfEng.CreateIterator();
+      IIterator iteratorOfEdu = _memberOfEdu.CreateIterator();
+
       Console.WriteLine("Members from Department of Art");
       Console.WriteLine("Name\tAge\tHeight\tWeight");
       PrintMembers(iteratorOfArt);
       Console.WriteLine("\nMembers from Department of Engineering");
       Console.WriteLine("Name\tAge\tHeight\tWeight");
       PrintMembers(iteratorOfEng);
+      Console.WriteLine("\nMembers from Department of Education");
+      Console.WriteLine("Name\tAge\tHeight\tWeight");
+      PrintMembers(iteratorOfEdu);
     }
     void PrintMembers(IIterator iterator) {
       while (iterator.HasNext()) {

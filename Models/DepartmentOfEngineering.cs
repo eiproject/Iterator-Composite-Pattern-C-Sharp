@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using IteratorPattern.Business;
 
 namespace IteratorPattern.Models {
-  class DepartmentOfEngineering {
+  class DepartmentOfEngineering : IDepartment {
     int _maxMembers = 5;
     int _numberOfItems = 0;
     Student[] _members;
@@ -31,8 +31,11 @@ namespace IteratorPattern.Models {
     /*    internal Student[] GetMembers() {
           return _members;
         }*/
-    internal IIterator GetIterator() {
+    /*internal IIterator GetIterator() {
       return new IteratorDepartmentOfEngineering (_members);
+    }*/
+    IIterator IDepartment.CreateIterator() {
+      return new IteratorDepartmentOfEngineering(_members);
     }
   }
 }

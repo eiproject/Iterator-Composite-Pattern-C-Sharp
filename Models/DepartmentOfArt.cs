@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using IteratorPattern.Business;
 
 namespace IteratorPattern.Models {
-  class DepartmentOfArt {
+  class DepartmentOfArt : IDepartment {
     List<Student> _members;
     internal DepartmentOfArt() {
       _members = new List<Student>();
@@ -22,7 +22,10 @@ namespace IteratorPattern.Models {
     /*    internal List<Student> GetMembers() {
           return _members;
         }*/
-    internal IIterator GetIterator() {
+/*    internal IIterator GetIterator() {
+      return new IteratorDepartmentOfArt(_members);
+    }*/
+    IIterator IDepartment.CreateIterator() {
       return new IteratorDepartmentOfArt(_members);
     }
   }

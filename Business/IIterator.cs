@@ -8,5 +8,6 @@ namespace IteratorPattern.Business {
   interface IIterator {
     bool HasNext();
     object Next();
+    void Remove();
   }
 }

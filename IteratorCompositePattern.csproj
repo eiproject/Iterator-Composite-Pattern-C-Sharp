@@ -44,11 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\IIterator.cs" />
+    <Compile Include="Business\IteratorDepartmentOfEducation.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\DepartmentOfArt.cs" />
+    <Compile Include="Models\DepartmentOfEducation.cs" />
     <Compile Include="Models\DepartmentOfEngineering.cs" />
     <Compile Include="Business\IteratorDepartmentOfArt.cs" />
     <Compile Include="Business\IteratorDepartmentOfEngineering.cs" />
+    <Compile Include="Models\IDepartment.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

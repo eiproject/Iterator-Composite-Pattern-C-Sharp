@@ -20,11 +20,23 @@ namespace IteratorPattern.Business {
         return false;
       }
     }
-
     object IIterator.Next() {
       Student student = _members[_position];
       _position++;
       return student;
+    }
+    void IIterator.Remove() {
+      if (_position <= 0) {
+        throw new IndexOutOfRangeException("Can't remove am item before Next() is called");
+      }
+      else if (_members[_position-1] != null) {
+        for (int i = _position-1; _position-1 <= _members.Count - 1; i++) {
+          _members[i] = _members[i + 1];
+        }
+      }
+      else {
+        // nothing
+      }
     }
   }
 }
