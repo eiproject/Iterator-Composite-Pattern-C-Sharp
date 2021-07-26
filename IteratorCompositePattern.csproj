@@ -43,22 +43,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\IIterator.cs" />
-    <Compile Include="Business\IteratorDepartmentOfEducation.cs" />
-    <Compile Include="Models\Admin.cs" />
-    <Compile Include="Models\DepartmentOfArt.cs" />
-    <Compile Include="Models\DepartmentOfEducation.cs" />
-    <Compile Include="Models\DepartmentOfEngineering.cs" />
-    <Compile Include="Business\IteratorDepartmentOfArt.cs" />
-    <Compile Include="Business\IteratorDepartmentOfEngineering.cs" />
-    <Compile Include="Models\IDepartment.cs" />
+    <Compile Include="Business\Iterator\IteratorArrayList.cs" />
+    <Compile Include="Models\Component.cs" />
+    <Compile Include="Models\IComponent.cs" />
+    <Compile Include="Models\StudentGroup.cs" />
+    <Compile Include="Business\Iterator\IIterator.cs" />
+    <Compile Include="Business\Iterator\IteratorDepartmentOfEducation.cs" />
+    <Compile Include="Business\Admin.cs" />
+    <Compile Include="Business\Department\DepartmentOfArt.cs" />
+    <Compile Include="Business\Department\DepartmentOfEducation.cs" />
+    <Compile Include="Business\Department\DepartmentOfEngineering.cs" />
+    <Compile Include="Business\Iterator\IteratorDepartmentOfArt.cs" />
+    <Compile Include="Business\Iterator\IteratorDepartmentOfEngineering.cs" />
+    <Compile Include="Business\Department\IDepartment.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Run.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Business\Component\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

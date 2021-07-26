@@ -6,7 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IteratorPattern.Models {
+
+using IteratorPattern.Models;
+
+namespace IteratorPattern.Business {
   class DepartmentOfEducation : IDepartment {
     private Dictionary<string, Student> _members;
     internal DepartmentOfEducation() {

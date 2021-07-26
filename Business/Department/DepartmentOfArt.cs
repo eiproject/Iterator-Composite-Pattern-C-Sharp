@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IteratorPattern.Business;
+using IteratorPattern.Models;
 
-namespace IteratorPattern.Models {
+namespace IteratorPattern.Business {
   class DepartmentOfArt : IDepartment {
     List<Student> _members;
     internal DepartmentOfArt() {
