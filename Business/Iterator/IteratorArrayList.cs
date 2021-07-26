@@ -24,7 +24,7 @@ namespace IteratorPattern.Business {
     }
 
     object IIterator.Next() {
-      object student = _members.ToArray()[_position];
+      object student = _members[_position];
       _position++;
       return student;
     }
@@ -34,7 +34,7 @@ namespace IteratorPattern.Business {
         throw new IndexOutOfRangeException("Can't remove am item before Next() is called");
       }
       else {
-        _members.Remove((Student)_members.ToArray()[_position]);
+        _members.Remove((Student)_members[_position]);
       }
     }
   }
