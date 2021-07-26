@@ -1,6 +1,7 @@
 ﻿using IteratorPattern.Business;
 using IteratorPattern.Models;
 using System;
+using System.Collections.Generic;
 
 namespace IteratorPattern {
   class Run {
@@ -32,21 +33,25 @@ namespace IteratorPattern {
       _memberOfEng = new DepartmentOfEngineering();
       _memberOfEdu = new DepartmentOfEducation();
 
-      AddIteratorMember(_memberOfArt.CreateIterator(), artDepartment);
-      AddIteratorMember(_memberOfEng.CreateIterator(), engDepartment);
-      AddIteratorMember(_memberOfEdu.CreateIterator(), eduDepartment);
+      /*      AddIteratorMember(_memberOfArt.CreateIterator(), artDepartment);
+            AddIteratorMember(_memberOfEng.CreateIterator(), engDepartment);
+            AddIteratorMember(_memberOfEdu.CreateIterator(), eduDepartment);*/
+
+      _memberOfArt.CreateIterator(artDepartment);
+      _memberOfEng.CreateIterator(engDepartment);
+      _memberOfEdu.CreateIterator(eduDepartment);
 
       Admin admin = new Admin(_theUniversity);
       admin.PrintMembers();
     }
 
-    void AddIteratorMember(IIterator iterator, Component baseComponent) {
-      while (iterator.HasNext()) {
-        Component currentStudent = (Component)iterator.Next();
-        if (currentStudent != null) {
-          baseComponent.Add(currentStudent);
-        }
-      }
-    }
+    /*    void AddIteratorMember(IIterator iterator, Component baseComponent) {
+          while (iterator.HasNext()) {
+            Component currentStudent = (Component)iterator.Next();
+            if (currentStudent != null) {
+              baseComponent.Add(currentStudent);
+            }
+          }
+        }*/
   }
 }

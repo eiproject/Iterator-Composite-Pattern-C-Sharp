@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IteratorPattern.Models;
+using IteratorPattern;
+using System.Collections;
 
 namespace IteratorPattern.Business {
   class DepartmentOfArt : IDepartment {
@@ -27,6 +29,16 @@ namespace IteratorPattern.Business {
     }*/
     IIterator IDepartment.CreateIterator() {
       return new IteratorDepartmentOfArt(_members);
+    }
+    IEnumerable IDepartment.CreateIterator(Component baseComponent) {
+      IEnumerable componentList = new StudentEnumerable(_members);
+      foreach (Component C in componentList) {
+        baseComponent.Add(C);
+      }
+      return new StudentEnumerable(_members);
+    }
+    object IDepartment.GetMembers() {
+      return _members;
     }
   }
 }

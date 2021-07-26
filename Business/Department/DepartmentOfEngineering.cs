@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,16 @@ namespace IteratorPattern.Business {
     }*/
     IIterator IDepartment.CreateIterator() {
       return new IteratorDepartmentOfEngineering(_members);
+    }
+    IEnumerable IDepartment.CreateIterator(Component baseComponent) {
+      IEnumerable componentList = new StudentEnumerable(_members);
+      foreach (Component C in componentList) {
+        baseComponent.Add(C);
+      }
+      return new StudentEnumerable(_members);
+    }
+    object IDepartment.GetMembers() {
+      return _members;
     }
   }
 }

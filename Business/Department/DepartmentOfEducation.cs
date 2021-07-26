@@ -32,5 +32,17 @@ namespace IteratorPattern.Business {
     IIterator IDepartment.CreateIterator() {
       return new IteratorDepartmentOfEducation(_members); ;
     }
+
+    IEnumerable IDepartment.CreateIterator(Component baseComponent) {
+      IEnumerable componentList = new StudentEnumerable(_members);
+      foreach (Component C in componentList) {
+        baseComponent.Add(C);
+      }
+      return new StudentEnumerable(_members);
+    }
+
+    object IDepartment.GetMembers() {
+      return _members;
+    }
   }
 }

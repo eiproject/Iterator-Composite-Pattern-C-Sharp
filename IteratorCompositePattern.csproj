@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Iterator\IteratorArrayList.cs" />
+    <Compile Include="EnumerableEnumerator.cs" />
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\IComponent.cs" />
     <Compile Include="Models\StudentGroup.cs" />
