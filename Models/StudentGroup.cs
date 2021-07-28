@@ -25,6 +25,11 @@ namespace IteratorPattern.Business {
     public override void Add(Component component) {
       _studentGroup.Add(component);
     }
+    public override void Add(IEnumerable components) {
+      foreach (Component c in components) {
+        _studentGroup.Add(c);
+      }
+    }
     public override void Remove(Component component) {
       _studentGroup.Remove(component);
     }

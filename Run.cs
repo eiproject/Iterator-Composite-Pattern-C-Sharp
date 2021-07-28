@@ -1,6 +1,7 @@
 ﻿using IteratorPattern.Business;
 using IteratorPattern.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace IteratorPattern {
@@ -37,9 +38,9 @@ namespace IteratorPattern {
             AddIteratorMember(_memberOfEng.CreateIterator(), engDepartment);
             AddIteratorMember(_memberOfEdu.CreateIterator(), eduDepartment);*/
 
-      _memberOfArt.CreateIterator(artDepartment);
-      _memberOfEng.CreateIterator(engDepartment);
-      _memberOfEdu.CreateIterator(eduDepartment);
+      artDepartment.Add(_memberOfArt.CreateIterator());
+      engDepartment.Add(_memberOfEng.CreateIterator());
+      eduDepartment.Add(_memberOfEdu.CreateIterator());
 
       Admin admin = new Admin(_theUniversity);
       admin.PrintMembers();

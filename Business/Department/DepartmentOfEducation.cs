@@ -29,17 +29,13 @@ namespace IteratorPattern.Business {
       }
       _members.Add(key, newStudent);
     }
-    IIterator IDepartment.CreateIterator() {
-      return new IteratorDepartmentOfEducation(_members); ;
-    }
 
-    IEnumerable IDepartment.CreateIterator(Component baseComponent) {
+    IEnumerable IDepartment.CreateIterator() {
       IEnumerable componentList = new StudentEnumerable(_members);
       IEnumerator componentEnumerator = componentList.GetEnumerator();
       while (componentEnumerator.MoveNext()) {
-        baseComponent.Add((Component)componentEnumerator.Current);
+        yield return (Component)componentEnumerator.Current;
       }
-      return new StudentEnumerable(_members);
     }
 
     object IDepartment.GetMembers() {

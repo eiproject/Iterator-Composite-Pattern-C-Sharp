@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,9 +27,14 @@ namespace IteratorPattern.Models {
     public override void Add(Component component) {
       throw new NotImplementedException();
     }
+    public override void Add(IEnumerable component) {
+      throw new NotImplementedException();
+    }
+
     public override void Remove(Component component) {
       throw new NotImplementedException();
     }
+
 
     public override void Print() {
       Console.Write(this.Name + "\t");
@@ -36,5 +42,6 @@ namespace IteratorPattern.Models {
       Console.Write(this.Height + "\t");
       Console.WriteLine(this.Weight);
     }
+
   }
 }

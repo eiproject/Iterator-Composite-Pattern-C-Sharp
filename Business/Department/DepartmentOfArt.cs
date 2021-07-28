@@ -19,24 +19,14 @@ namespace IteratorPattern.Business {
     void AddMember(string name, int age, int height, int weight) {
       Student newStudent = new Student(name, age, height, weight);
       _members.Add(newStudent);
-    }
-    // Commented, exsposed internal implementation
-    /*    internal List<Student> GetMembers() {
-          return _members;
-        }*/
-/*    internal IIterator GetIterator() {
-      return new IteratorDepartmentOfArt(_members);
-    }*/
-    IIterator IDepartment.CreateIterator() {
-      return new IteratorDepartmentOfArt(_members);
-    }
-    IEnumerable IDepartment.CreateIterator(Component baseComponent) {
+    } 
+
+    IEnumerable IDepartment.CreateIterator() {
       IEnumerable componentList = new StudentEnumerable(_members);
       IEnumerator componentEnumerator = componentList.GetEnumerator();
       while (componentEnumerator.MoveNext()) {
-        baseComponent.Add((Component)componentEnumerator.Current);
+        yield return componentEnumerator.Current;
       }
-      return new StudentEnumerable(_members);
     }
     object IDepartment.GetMembers() {
       return _members;

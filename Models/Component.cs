@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace IteratorPattern.Models {
     public abstract int Height { get; }
     public abstract int Weight { get; }
 
+    public abstract void Add(IEnumerable component);
     public abstract void Add(Component component);
     public abstract void Remove(Component component);
     public abstract void Print();
