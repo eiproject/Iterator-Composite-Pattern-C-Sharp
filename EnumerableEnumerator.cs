@@ -10,19 +10,13 @@ namespace IteratorPattern {
     public object StudentArray { get; }
 
     internal StudentEnumerable(List<Student> studentArray) {
-      for (int i = 0; i < studentArray.Count; i++) {
-        _students.Add(studentArray[i]);
-      }
+      _students.AddRange(studentArray);
     }
     internal StudentEnumerable(Component[] studentArray) {
-      for (int i = 0; i < studentArray.Length; i++) {
-        _students.Add(studentArray[i]);
-      }
+      _students.AddRange(studentArray);
     }
     internal StudentEnumerable(Dictionary<string, Student> studentArray) {
-      for (int i = 0; i < studentArray.Count; i++) {
-        _students.Add(studentArray.Values.ElementAt(i));
-      }
+      _students.AddRange(studentArray.Values);
     }
 
     IEnumerator IEnumerable.GetEnumerator() {
@@ -32,7 +26,7 @@ namespace IteratorPattern {
       return new StudentEnumerator(_students);
     }
   }
-
+  // yield
   class StudentEnumerator : IEnumerator {
     ArrayList _students;
     int _position = -1;

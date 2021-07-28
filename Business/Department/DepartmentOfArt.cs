@@ -32,8 +32,9 @@ namespace IteratorPattern.Business {
     }
     IEnumerable IDepartment.CreateIterator(Component baseComponent) {
       IEnumerable componentList = new StudentEnumerable(_members);
-      foreach (Component C in componentList) {
-        baseComponent.Add(C);
+      IEnumerator componentEnumerator = componentList.GetEnumerator();
+      while (componentEnumerator.MoveNext()) {
+        baseComponent.Add((Component)componentEnumerator.Current);
       }
       return new StudentEnumerable(_members);
     }
